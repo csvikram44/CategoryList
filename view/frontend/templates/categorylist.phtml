@@ -1,0 +1,20 @@
+<?php
+/**
+ * @var \CsVikram\CategoryList\Block\CategoryList $block;
+ */
+$collection = $block->getCategoryCollection();
+?>
+<?php if ($collection): ?>
+<ul>
+
+    <?php foreach ($collection as $categories):?>
+        <?php if ($categories->getId() != 2): ?>
+            <li>
+                <img src="<?php echo $categories->getImageUrl(); ?>" title="<?php echo $categories->getName(); ?>">
+                <?php echo $categories->getName(); ?><br/>
+                <?php echo $categories->getUrlKey(); ?>
+            </li>
+        <?php endif; ?>
+    <?php endforeach; ?>
+</ul>
+<?php endif; ?>
